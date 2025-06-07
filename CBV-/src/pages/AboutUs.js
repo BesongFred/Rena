@@ -13,7 +13,7 @@ const AboutUs = () => {
         <div className="space-x-4">
           <button onClick={() => navigate('/')} className="hover:text-pink-600">Home</button>
           <button onClick={() => navigate('/report')} className="hover:text-pink-600">Report</button>
-          <button onClick={() => navigate('/support')} className="hover:text-pink-600">Get Support</button>
+          <button onClick={() => navigate('/GetSupport')} className="hover:text-pink-600">Get Support</button>
           <button onClick={() => navigate('/login')} className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">
             Login
           </button>

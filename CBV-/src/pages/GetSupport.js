@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearchFilter from '../components/SearchFilter'; // Ensure this file exists
-import supportImage from '../assets/love.jpg'; // Replace or remove if not needed
+import supportImage from '../assets/love04.jpg'; // Replace or remove if not needed
 
 const supportOptions = [
   {
