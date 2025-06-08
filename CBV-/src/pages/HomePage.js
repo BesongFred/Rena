@@ -1,7 +1,6 @@
 // src/pages/HomePage.js
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import SearchFilter from '../components/SearchFilter';
 import ServiceFeatures from '../components/Service';
 
 import loveImage3 from '../assets/love01.jpg';
@@ -16,16 +15,6 @@ export default function HomePage() {
     { id: 3, name: "Safe Haven - Chicago", location: "Chicago", price: 0, img: loveImage04 },
     { id: 4, name: "Safe Haven - Chicago", location: "Chicago", price: 0, img: loveImage2 },
   ];
-
-  const [filteredListings, setFilteredListings] = useState(listings);
-
-  const handleFilter = ({ location, maxPrice }) => {
-    const filtered = listings.filter((item) =>
-      (!location || item.location.toLowerCase().includes(location.toLowerCase())) &&
-      (!maxPrice || item.price <= parseInt(maxPrice))
-    );
-    setFilteredListings(filtered);
-  };
 
   const testimonials = [
     { id: 1, name: "Alice", feedback: "This app helped me get the support I needed quickly and safely." },
@@ -66,20 +55,14 @@ export default function HomePage() {
         </button>
       </section>
 
-      {/* Services Section */}
+      {/* Services */}
       <ServiceFeatures />
 
-      {/* Search Filters */}
-      <section className="max-w-4xl mx-auto py-8 px-4">
-        <h3 className="text-2xl font-semibold mb-4">Find Local Support</h3>
-        <SearchFilter onFilter={handleFilter} />
-      </section>
-
-      {/* Featured Support Centers */}
+      {/* Support Centers */}
       <section className="max-w-6xl mx-auto px-4 py-12">
         <h3 className="text-2xl font-semibold mb-6 text-center">Verified Support Centers</h3>
         <div className="grid gap-6 md:grid-cols-3">
-          {filteredListings.map(listing => (
+          {listings.map(listing => (
             <div key={listing.id} className="bg-white rounded-xl shadow hover:shadow-lg transition">
               <img src={listing.img} alt={listing.name} className="w-full h-48 object-cover rounded-t-xl" />
               <div className="p-4">
